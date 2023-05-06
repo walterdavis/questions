@@ -73,3 +73,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "bootstrap_form", "~> 5.0"
+
+gem "bootstrap_flash_messages", "~> 1.0"
