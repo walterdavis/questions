@@ -25,7 +25,7 @@ class QuestionnairesController < ApplicationController
 
     respond_to do |format|
       if @questionnaire.save
-        format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully created." }
+        format.html { redirect_to questionnaire_url(@questionnaire) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -36,7 +36,7 @@ class QuestionnairesController < ApplicationController
   def update
     respond_to do |format|
       if @questionnaire.update(questionnaire_params)
-        format.html { redirect_to questionnaire_url(@questionnaire), notice: "Questionnaire was successfully updated." }
+        format.html { redirect_to questionnaire_url(@questionnaire) }
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
@@ -48,8 +48,7 @@ class QuestionnairesController < ApplicationController
     @questionnaire.destroy
 
     respond_to do |format|
-      format.html { redirect_to questionnaires_url, notice: "Questionnaire was successfully destroyed." }
-      format.json { head :no_content }
+      format.html { redirect_to questionnaires_url }
     end
   end
 

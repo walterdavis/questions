@@ -1,8 +1,4 @@
-<h1>New section</h1>
-
 <%= turbo_frame_tag @questionnaire, :sections do %>
+<%= render @questionnaire.sections.persisted %>
 <%= render "form", section: @section %>
 <%- end -%>
-<div class="btn-group">
-  <%= link_to "Back to questionnaire", @questionnaire, class: 'btn btn-info' %>
-</div>

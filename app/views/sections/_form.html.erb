@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: section, url: questionnaire_sections_path(section.questionnaire)) do |form| %>
+<%= bootstrap_form_with(model: section, url: questionnaire_sections_path(section.questionnaire), class: 'mb-3') do |form| %>
   <%= form.text_field :name %>
 
   <%= form.primary %>

@@ -12,7 +12,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @section.questionnaire, notice: "Question was successfully created." }
+        format.html { redirect_to @section.questionnaire }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
