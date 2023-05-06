@@ -1,3 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "./rails_bootstrap_forms.css";
+
+.form-btn-group > form.btn {
+  padding: 0;
+}
+.form-btn-group > form.btn > .btn {
+  border: none;
+  background: none;
+}

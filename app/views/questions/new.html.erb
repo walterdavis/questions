@@ -1,7 +1,14 @@
-<h1>New questionnaire</h1>
+<h1>New question</h1>
 
-<%= render "form", questionnaire: @questionnaire %>
+<%= turbo_frame_tag @question.section, :questions do %>
+  <div class="card-body">
+      <ul>
+        <%= render @section.questions.persisted %>
+      </ul>
+    <%= render "form", question: @question %>
+  </div>
+<%- end -%>
 
 <div class="btn-group">
-  <%= link_to "Back to questionnaires", questionnaires_path, class: 'btn btn-secondary' %>
+  <%= link_to "Back to questions", @question.section.questionnaire, class: 'btn btn-info' %>
 </div>

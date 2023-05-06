@@ -1,0 +1,16 @@
+<div class="card mb-3" id="<%= dom_id section %>">
+  <p class="card-header">
+    <strong>Section:</strong>
+    <%= section.name %>
+  </p>
+  <%= turbo_frame_tag section, :questions do %>
+    <div class="card-body">
+      <ul>
+        <%= render section.questions %>
+      </ul>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Add a question', new_section_question_path(section), class: 'btn btn-success btn-sm' %>
+    </div>
+  <%- end -%>
+</div>

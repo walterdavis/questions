@@ -2,12 +2,7 @@
 <h1>Questionnaires</h1>
 
 <div id="questionnaires">
-  <% @questionnaires.each do |questionnaire| %>
-    <%= render questionnaire %>
-    <p>
-      <%= link_to "Show this questionnaire", questionnaire %>
-    </p>
-  <%- end -%>
+  <%= render @questionnaires %>
 </div>
 
-<%= link_to "New questionnaire", new_questionnaire_path %>
+<%= link_to "New questionnaire", new_questionnaire_path, class: 'btn btn-primary' %>

@@ -61,6 +61,6 @@ class QuestionnairesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def questionnaire_params
-      params.require(:questionnaire).permit(:name)
+      params.require(:questionnaire).permit(:name, sections_parameters: [:id, :name])
     end
 end

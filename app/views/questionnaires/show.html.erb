@@ -1,7 +1,13 @@
-<%= render @questionnaire %>
+<%= turbo_frame_tag @questionnaire do %>
+  <%= tag.h1 @questionnaire.name %>
+  <%= turbo_frame_tag @questionnaire, :sections do %>
+    <%= render @questionnaire.sections %>
+    <div class="my-3"><%= link_to 'Add a section', new_questionnaire_section_path(@questionnaire), class: 'btn btn-primary' %></div>
+  <%- end -%>
+<%- end -%>
 
-<div class="btn-group">
+<div class="btn-group form-btn-group">
   <%= link_to "Edit this questionnaire", edit_questionnaire_path(@questionnaire), class: 'btn btn-secondary' %>
-  <%= link_to "Back to questionnaires", questionnaires_path, class: 'btn btn-secondary' %>
-  <%= button_to "Destroy this questionnaire", @questionnaire, method: :delete %>
+  <%= link_to "Back to questionnaires", questionnaires_path, class: 'btn btn-info' %>
+  <%= button_to "Destroy this questionnaire", @questionnaire, method: :delete, class: 'btn', form_class: 'btn btn-danger' %>
 </div>
