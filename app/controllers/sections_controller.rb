@@ -1,12 +1,12 @@
 class SectionsController < ApplicationController
   before_action :set_section, only: %i[ show edit update destroy ]
 
-  # GET /sections or /sections.json
+  # GET /sections
   def index
     @sections = Section.all
   end
 
-  # GET /sections/1 or /sections/1.json
+  # GET /sections/1
   def show
   end
 
@@ -19,35 +19,31 @@ class SectionsController < ApplicationController
   def edit
   end
 
-  # POST /sections or /sections.json
+  # POST /sections
   def create
     @section = Section.new(section_params)
 
     respond_to do |format|
       if @section.save
         format.html { redirect_to section_url(@section), notice: "Section was successfully created." }
-        format.json { render :show, status: :created, location: @section }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /sections/1 or /sections/1.json
+  # PATCH/PUT /sections/1
   def update
     respond_to do |format|
       if @section.update(section_params)
         format.html { redirect_to section_url(@section), notice: "Section was successfully updated." }
-        format.json { render :show, status: :ok, location: @section }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /sections/1 or /sections/1.json
+  # DELETE /sections/1
   def destroy
     @section.destroy
 
