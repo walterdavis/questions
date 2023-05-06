@@ -235,8 +235,5 @@ DEPENDENCIES
   web-console
   webdrivers
 
-RUBY VERSION
-   ruby 2.7.6p219
-
 BUNDLED WITH
    2.4.12

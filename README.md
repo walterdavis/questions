@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app shows a list of questionnaires, and allows you to add sections to each as well as questions in each section.
 
-Things you may want to cover:
+* Ruby 3.0.6
+* Rails 7.0.4
+* SQLite
 
-* Ruby version
+Using Bootstrap 5, `cssbundling`, `jsbundling` with `esbuild`, and Yarn.
 
-* System dependencies
+Run `bundle install` and `rails db:migrate` to set up the app.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Use `bin/dev` to start the local development server.
